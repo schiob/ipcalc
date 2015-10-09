@@ -2,8 +2,8 @@ __author__ = 'Francisco Ramos'
 class IpCalc(object):
 
     res = []
-
     def __init__(self,input_network):
+
         ip_to_bin = lambda ip: ''.join([bin(int(x)+256)[3:] for x in ip.split('.')])
         if len(input_network.split("/")) == 2:
             self.netmask_cidr = input_network.split("/")[1]
@@ -57,8 +57,9 @@ if __name__ == "__main__":
     print "Ip Maxima", ips.ip_max_str
     print "Broadcast", ips.broadcast_str
     print "Cantidad de Host", ips.quantity_host
+    print ips.res
 
-    ips = IpCalc("192.168.1.34/22")
+    ips = IpCalc("192.168.5.34/22")
     print "\n\nIP", ips.ip_str
     print "Netmask", ips.netmask_str
     print "Network", ips.network_str
@@ -66,3 +67,4 @@ if __name__ == "__main__":
     print "Ip Maxima", ips.ip_max_str
     print "Broadcast", ips.broadcast_str
     print "Cantidad de Host", ips.quantity_host
+    print ips.res
