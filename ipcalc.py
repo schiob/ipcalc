@@ -1,9 +1,7 @@
 __author__ = 'Francisco Ramos'
 class IpCalc(object):
 
-    res = []
     def __init__(self,input_network):
-
         ip_to_bin = lambda ip: ''.join([bin(int(x)+256)[3:] for x in ip.split('.')])
         if len(input_network.split("/")) == 2:
             self.netmask_cidr = input_network.split("/")[1]
@@ -17,6 +15,7 @@ class IpCalc(object):
         self.network_str = ""
         self.ip_min_str = ""
         self.quantity_host = 0
+        self.res = []
         self.res = self.__calc()
 
     def __calc(self):
